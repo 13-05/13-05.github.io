@@ -5,6 +5,13 @@
       "name": "This Thing On?",
       "description": "I've set up my blog!",
       "link": "/posts/this_thing_on"
+    },
+    
+    {
+      "date": 1666347174079,
+      "name": "Artix Linux: Void Linux With the AUR?",
+      "description": "In this article, I discuss my experience with Artix versus my experience with Void, as well as some notable differences and similarities between the two.",
+      "link": "/posts/artix_linux_void"
     }
   ]
 }

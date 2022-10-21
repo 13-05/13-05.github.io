@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+    <link rel="stylesheet" href="../main.css">
+    <title>blog • 1305</title>
+  </head>
+
+  <body>
+    <main class="container">
+      <hgroup>
+        <h1>Artix Linux: Void Linux With the AUR?</h1>
+        <h2>In this article, I discuss my experience with Artix versus my experience with Void, as well as some notable differences and similarities between the two.</h2>
+      </hgroup>
+      <hr>
+
+      <section>
+        <p>If you haven't heard of <a href="https://artixlinux.org">Artix</a>, it's very similar to Void in that it's both a minimal distribution (due to it being an Arch derivative), and can be used with the <special-text>runit</special-text> init system. Artix has a few differences, but also some more subtle similarities to Void besides the ability to use runit.</p>
+
+        <p>An issue many seem to have with Artix is due to its very nature: Artix is Arch-based but with a monumental change, and with Arch itself already being prone to many issues in some cases, it's clear that these issues have a high possibility of being present in Artix. While I can't attest to Artix's instability (I've only been on it about a week), I can say that some simple things in Void were made difficult in Artix, at least for me. When attempting to install a <a href="https://github.com/VandalByte/darkmatter-grub2-theme">grub2 theme</a>, I was faced with a fatal issue. I couldn't boot my Artix install. I ended up fixing it by chrooting in and reinstalling grub (making a vanilla configuration), and I suspect the issue was due to the distro's default grub theme conflicting with the one I attempted to install.</p>
+
+        <p>Some things are easier, though. With some Arch repositories enabled for Artix, I get access to a whopping 19,000 packages. Because of this, I rarely need to build programs from source, something I'd grown all too used to when on Void. Plus, it's easier to fix issues with Artix because Arch is so well documented! Also, Artix has <special-text>pacman</special-text>! When I first switched over, I felt that <special-text>xbps</special-text> barely beat pacman, and both were pretty fast. Then, I dug around in pacman's configuration and enabled parallel downloads! With these, pacman is not only faster, but possibly more resource efficient than xbps.</p>
+
+        <p>Now, addressing the elephant in the room: Artix has the <special-text>AUR</special-text>! There have been some occasions when Arch repos didn't have a package I needed, but the AUR had it, basically solving that problem in an instant. As a consequence of needing to enable Arch repos and learn the AUR if you don't know how to use it already, though, the inital setup of an Artix install may take more effort than Void.</p>
+
+        <p>Another gripe against Artix that many have is that instead of being an independent distribution with its own init system, it's <quote>simply Arch with systemd ripped out</quote>. And yes, this is somewhat noticeable while using Artix. Void feels a little more polished, and while Artix isn't necessarily bad, it certainly feels less refined than Void.</p>
+
+        <p>Based on all this, it seems to me that Artix takes a little more effort than Void, but the payoff is worth it. After all, who wouldn't want Void with the AUR?</p>
+        <img src="/images/artix_linux.png"></img>
+      </section>
+
+      <footer class="container">
+        <hr>
+        <p>Website powered by <a href="https://github.com/picocss/pico">picocss</a>!</p>
+      </footer>
+    </main>
+  </body>
+</html>

@@ -18,8 +18,7 @@
       for (index in posts_data.posts) {
         let post = posts_data.posts[index];
         let raw_date = new Date(post["date"]);
-        let formatted_date = `${raw_date.getDate()}.${raw_date.getMonth() + 1}.${raw_date.getFullYear()}`;
-
+        let formatted_date = `${raw_date.getDate()}.${raw_date.getMonth() + 1}.${raw_date.getFullYear()}, ${raw_date.toLocaleTimeString(navigator.language, {hour: '2-digit', minute:'2-digit'})}`;
         let hgroup = document.createElement("hgroup");
         let post_title = document.createElement("h4");
         let link = document.createElement("a");

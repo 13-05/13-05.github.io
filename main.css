@@ -33,7 +33,8 @@ quote::after {
 }
 
 special-text {
-  color: #4d88e8;
+  /*color: #4d88e8;*/
+  color: #df03fc;
 }
 
 ol.list {

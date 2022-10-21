@@ -17,7 +17,7 @@
       <section>
         <p>For new users on Arch based distros, pacman and all its arguments might seem a little confusing. Or, veteran users might feel like it's too much to type. Well, I feel both of those ways (although I'm not a <quote>veteran</quote>), and here are some QOL things I have that makes everything (or, most things) easy.</p>
 
-        <p>Here's the x-super-installer and x-super-remover functions, basically an interactive pacman search to install or uninstall packages (credit to <a href="https://old.reddit.com/r/voidlinux/comments/es8zgf/tiny_convenience_function_i_think_would_be_worth/">this post</a>, as this is just a port of that function to Arch!):</p>
+        <p>Here are the x-super-installer and x-super-remover functions, basically interactive pacman searches to install or uninstall packages (credit to <a href="https://old.reddit.com/r/voidlinux/comments/es8zgf/tiny_convenience_function_i_think_would_be_worth/">this post</a>, as this is just a port of that function to Arch!):</p>
         <pre><code>xsi () {
 	pacman -Slq | fzf -m --preview-window="right:66%:wrap" --preview "pacman -Si {1}" | xargs -ro sudo pacman -S
 }</code></pre>

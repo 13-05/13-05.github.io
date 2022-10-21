@@ -1,0 +1,10 @@
+{
+  "posts": [
+    {
+      "date": 1666306874772,
+      "name": "This Thing On?",
+      "description": "I've set up my blog!",
+      "link": "/posts/this_thing_on"
+    }
+  ]
+}

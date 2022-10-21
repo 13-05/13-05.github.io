@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <script>
+    // this code loads the existing blog posts as little previews!
+    function load_blog_posts() {
+      let fetch_blog_data = () => {
+        let req = new XMLHttpRequest();
+        req.open("GET", "/posts/posts.json", false);
+        req.send();
+        let text = req.response;
+        return JSON.parse(text);
+      }
+
+      let posts_node = document.getElementById("posts");
+      let posts_data = fetch_blog_data();
+      // let's sort the posts by date (newest first)
+      posts_data.posts.sort(function(x, y){ return x.date < y.date ? 1 : -1; });
+      for (index in posts_data.posts) {
+        let post = posts_data.posts[index];
+        let raw_date = new Date(post["date"]);
+        let formatted_date = `${raw_date.getDate()}.${raw_date.getMonth() + 1}.${raw_date.getFullYear()}`;
+
+        let hgroup = document.createElement("hgroup");
+        let post_title = document.createElement("h4");
+        let link = document.createElement("a");
+        let description = document.createElement("p");
+        let pretty_date = document.createElement("p");
+
+        pretty_date.innerText = formatted_date;
+        description.innerText = post["description"];
+        link.setAttribute("href", post["link"]);
+        link.innerText = post["name"];
+
+        post_title.appendChild(link);
+        hgroup.appendChild(post_title);
+        hgroup.appendChild(description);
+        hgroup.appendChild(pretty_date);
+        posts_node.appendChild(hgroup);
+      }
+    }
+
+    window.onload = load_blog_posts;
+  </script>
+  <head>
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+    <link rel="stylesheet" href="main.css">
+    <title>blog • 1305</title>
+  </head>
+
+  <body>
+    <main class="container">
+      <hgroup>
+        <h1>outsider</h1>
+        <h2><quote>i make stuff, sometimes it works</quote></h2>
+      </hgroup>
+
+      <nav aria-label="breadcrumb">
+        <ol>
+          <li><a href="/">home</a></li>
+          <span aria-hidden="true">|</span>
+          <li><a href="/code">code</a></li>
+          <span aria-hidden="true">|</span>
+          <li><a href="/about">about</a></li>
+          <span aria-hidden="true">|</span>
+          <li><a href="/blog" aria-current="page">blog</a></li>
+        </ol>
+      </nav>
+      <hr>
+      
+      <section id="posts">
+        <h2>Posts</h2>
+      </section>
+
+      <footer class="container">
+        <hr>
+        <p>Website powered by <a href="https://github.com/picocss/pico">picocss</a>!</p>
+      </footer>
+    </main>
+  </body>
+</html>

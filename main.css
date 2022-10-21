@@ -1,0 +1,42 @@
+:root {
+  --background-color: #16121a !important;
+
+  --primary: #761ebd !important;
+  --h1-color: #761ebd !important;
+  --h2-color: #761ebd !important;
+  --h3-color: #761ebd !important;
+  --h4-color: #761ebd !important;
+
+  --primary-hover: #390d99 !important;
+  --primary-focus: #8d18ed !important;
+}
+
+::selection {
+  color: #ffffff !important;
+  background: #761ebd !important;
+}
+
+contact {
+  color: #761ebd;
+}
+
+quote {
+  font-style: italic
+}
+
+quote::before {
+  content: "\""
+}
+
+quote::after {
+  content: "\""
+}
+
+special-text {
+  color: #4d88e8;
+}
+
+ol.list {
+  list-style-type: circle;
+  list-style-position: inside;
+}

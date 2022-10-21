@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+    <link rel="stylesheet" href="../main.css">
+    <title>blog • 1305</title>
+  </head>
+
+  <body>
+    <main class="container">
+      <hgroup>
+        <h1>Making Pacman Easy</h1>
+        <h2>In this post, I discuss quality-of-life (QOL) things related to pacman, like aliases and functions for certain things.</h2>
+      </hgroup>
+      <hr>
+
+      <section>
+        <p>For new users on Arch based distros, pacman and all its arguments might seem a little confusing. Or, veteran users might feel like it's too much to type. Well, I feel both of those ways (although I'm not a <quote>veteran</quote>), and here are some QOL things I have that makes everything (or, most things) easy.</p>
+
+        <p>Here's the x-super-installer and x-super-remover functions, basically an interactive pacman search to install or uninstall packages (credit to <a href="https://old.reddit.com/r/voidlinux/comments/es8zgf/tiny_convenience_function_i_think_would_be_worth/">this post</a>, as this is just a port of that function to Arch!):</p>
+        <pre><code>xsi () {
+	pacman -Slq | fzf -m --preview-window="right:66%:wrap" --preview "pacman -Si {1}" | xargs -ro sudo pacman -S
+}</code></pre>
+        <pre><code>xsr () {
+	pacman -Qq | fzf -m --preview-window="right:66%:wrap" --preview "pacman -Q --info {1}" | xargs -ro sudo pacman -R
+}</code></pre>
+
+        <p>Here's a preview of each:</p>
+
+        <img src="/images/xsi_function.png">
+
+        <img src="/images/xsr_function.png">
+        <hr>
+
+        <p>Here are some aliases I find useful (heavily inspired by <a href="https://kota.nz/notes/package_manager_aliases/">this blog post</a>):</p>
+        <pre><code>alias xi="sudo pacman -S"
+alias xr="sudo pacman -Rns"
+alias xq="sudo pacman -Si"</code></pre>
+        <hr>
+
+        <p>Finally, my must-have on any Arch-based system is <code>yay</code>. Instead of running <code>sudo pacman -Syu</code> every time you need to update stuff, just type <code>yay</code>! Also, it syncs up the AUR, as well as working as an AUR package manager for directly installing things. Overall, yay's just great.</p>
+      </section>
+      <footer class="container">
+        <hr>
+        <p>Website powered by <a href="https://github.com/picocss/pico">picocss</a>!</p>
+      </footer>
+    </main>
+  </body>
+
+</html>

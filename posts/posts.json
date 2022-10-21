@@ -12,6 +12,13 @@
       "name": "Artix Linux: Void Linux With the AUR?",
       "description": "In this article, I discuss my experience with Artix versus my experience with Void, as well as some notable differences and similarities between the two.",
       "link": "/posts/artix_linux_void"
+    },
+
+    {
+      "date": 1666388589446,
+      "name": "Making Pacman Easy",
+      "description": "In this post, I discuss quality-of-life (QOL) things related to pacman, like aliases and functions for certain things.",
+      "link": "/posts/making_pacman_easy"
     }
   ]
 }

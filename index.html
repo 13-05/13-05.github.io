@@ -4,7 +4,8 @@
     function load_blog_posts() {
       let fetch_blog_data = () => {
         let req = new XMLHttpRequest();
-        req.open("GET", "/posts/posts.json", false);
+        // i *think* this should stop the browser from caching the json file!
+        req.open("GET", `/posts/posts.json?r=${Math.random()}`, false);
         req.send();
         let text = req.response;
         return JSON.parse(text);

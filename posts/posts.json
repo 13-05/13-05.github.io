@@ -19,6 +19,13 @@
       "name": "Making Pacman Easy",
       "description": "In this post, I discuss quality-of-life (QOL) things related to pacman, like aliases and functions for certain things.",
       "link": "/posts/making_pacman_easy"
+    },
+
+    {
+      "date": 1666557455221,
+      "name": "Librewolf: The Best Browser?",
+      "description": "This post discusses Librewolf, a privacy-centric fork of Firefox.",
+      "link": "/posts/librewolf_the_best"
     }
   ]
 }
